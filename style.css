@@ -79,7 +79,7 @@ header {
 }
 header video {
   width: 100%;
-  height: ;
+  height: none;
   max-height: 700px;
   position: absolute;
   top: 0;
