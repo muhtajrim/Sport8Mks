@@ -78,6 +78,9 @@ header {
   z-index: 2;
 }
 header video {
+  width: 100%;
+  height: ;
+  max-height: 700px;
   position: absolute;
   top: 0;
   left: 0;
