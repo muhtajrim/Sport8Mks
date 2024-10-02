@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body {
+            font-family: Arial, sans-serif;
+            background-color: #593df5;
+            margin: 0;
+            padding: 20px;
+        }
+        img {
+          width: 100%;
+          height: auto;
+        }
+        h6 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+</style>
+</head>
+<body>
+    <section id="#pendaftaran3.html">
+      <img src="aset/s3.png">
+        <h6>SPORT </h6>
+        <form id="dataForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="age">Umur:</label>
+            <input type="number" id="age" name="age" required><br><br> 
+            <label for="phone">No HP:</label>
+            <input type="number" id="phone" name="phone" required><br><br>
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required><br><br>
+              <option value="">Select</option>
+              <option value="laki-laki">Laki-Laki</option>
+              <option value="perempuan">Perempuan</option>
+            </select><br><br>
+            <label for="addres">Kecamatan:</label>
+            <select  id="addres" name="addres" required>
+              <option value="">Pilih Kecematan</option>
+              <option value="biringkanaya">Biringkanaya</option>
+              <option value="bontoala">Bontoala</option>
+              <option value="makassar">Makassar</option>
+              <option value="mamajang">Mamajang</option>
+              <option value="manggala">Manggala</option>
+              <option value="mariso">Mariso</option>
+              <option value="panakkukang">Panakkukang</option>
+              <option value="rappocini">Rappocini</option>
+              <option value="sangkarrang">Sangkarrang</option>
+              <option value="tallo">Tallo</option>
+              <option value="tamalanrea">Tamalanrea</option>
+              <option value="tamalate">Tamalate</option>
+              <option value="ujung pandang">Ujung Pandang</option>
+              <option value="ujung tanah">Ujung Tanah</option>
+              <option value="wajo">Wajo</option>
+            </select><br><br>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+    <script>
+        document
+  .getElementById("dataForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault(); // Mencegah pengiriman default
+
+    var formData = new FormData(this);
+
+    fetch(
+      "https://script.google.com/macros/s/AKfycbylLWPQdhgRW4j7SGsBtKOaTTqNAxUdv07F7eX5q-gZTcZhXrwIpOBFmwewDN5eJpgJQw/exec",
+      {
+        method: "POST",
+        body: formData,
+      }
+    )
+      .then((response) => response.text())
+      .then((data) => {
+        alert(data); // Menampilkan respons
+
+        this.reset();
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  });
+    </script>
+</body>
+</html>
