@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pembayaran Berhasil</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 50px;
+      }
+      h1 {
+        color: #4caf50;
+      }
+      p {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Pembayaran Berhasil!</h1>
+    <p>
+      Terima kasih atas pembayaran Anda. Anda akan diarahkan ke WhatsApp untuk
+      konfirmasi.
+    </p>
+
+    <script>
+      // Fungsi untuk mengarahkan ke WhatsApp setelah beberapa detik
+      function redirectToWhatsApp() {
+        const nomorWA = "0895327157414"; // Ganti dengan nomor WhatsApp tujuan
+        const pesanWA =
+          "Halo, saya sudah melakukan pembayaran. Mohon konfirmasinya.";
+        const whatsappURL = `https://wa.me/${nomorWA}?text=${encodeURIComponent(
+          pesanWA
+        )}`;
+
+        // Alihkan ke WhatsApp
+        window.location.href = whatsappURL;
+      }
+
+      // Tunggu 5 detik sebelum mengarahkan
+      setTimeout(redirectToWhatsApp, 5000);
+    </script>
+  </body>
+</html>
